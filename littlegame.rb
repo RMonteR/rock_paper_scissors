@@ -1,6 +1,6 @@
 
-$user_wins = " Dammit... You win." # I know globals are evil! Just don't know any better here
-$ruby_wins = "  Yeah! You lose!"
+USER_WINS = " Dammit... You win." # I know globals are evil! Just don't know any better here...
+RUBY_WINS = "  Yeah! You lose!"
 
 puts "Welcome! This game will help you making impossible decisions."
 
@@ -11,29 +11,33 @@ def game_core
 
   begin
     user_choice = gets.chomp.downcase
-    valid_choice = possible_choices.include?(user_choice)
-    puts "Did you say \"#{user_choice}\"? Nah, dunno. Try again."
+
+    if possible_choices.include?(user_choice)
+      valid_choice = user_choice
+    else
+      puts "Did you say \"#{user_choice}\"? Nah, dunno. Try again."
+    end
   end while !valid_choice
 
   puts "  You say #{user_choice}"
   puts "  I say #{computer_choice}"
 
     if user_choice == "rock" && computer_choice == "paper"
-    puts $ruby_wins
+    puts RUBY_WINS
     elsif user_choice == "rock" && computer_choice == "scissors"
-    puts $user_wins
+    puts USER_WINS
     end
 
     if user_choice == "paper" && computer_choice == "rock"
-    puts $user_wins
+    puts USER_WINS
     elsif user_choice == "paper" && computer_choice == "scissors"
-    puts $ruby_wins
+    puts RUBY_WINS
     end
 
     if user_choice == "scissors" && computer_choice == "rock"
-    puts $ruby_wins
+    puts RUBY_WINS
     elsif user_choice == "scissors" && computer_choice == "paper"
-    puts $user_wins
+    puts USER_WINS
     end
 
     if user_choice == computer_choice
