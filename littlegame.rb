@@ -1,5 +1,5 @@
 
-USER_WINS = " Dammit... You win." # I know globals are evil! Just don't know any better here...
+USER_WINS = " Dammit... You win."
 RUBY_WINS = "  Yeah! You lose!"
 
 puts "Welcome! This game will help you making impossible decisions."
